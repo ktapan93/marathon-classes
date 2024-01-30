@@ -158,12 +158,10 @@ const centresByCity = {
 };
 
 const timeSlots = {
-  "4": "Slot is this",
-  "5": "This is a different slot",
-  "6": "Slot for class 6",
-  "7" : "Slot for class 7",
-  "8": "Slot for class 8",
-  "9" : "Slot for class 9"
+  "6": "Maths Class (12 - 3 PM)",
+  "7": "Science Class (12 - 3 PM)",
+  "8": "Maths Class (4 - 7 PM)",
+  "9" : "Science Class (4 -  7 PM)"
 }
 
 // Function to populate cities based on selected state
