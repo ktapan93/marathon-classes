@@ -38,6 +38,7 @@ button {
   border-radius: 8px;
   border: 0.7px solid #490634;
   background: rgba(255, 255, 255, 0.70);
+  box-sizing: border-box;
 }
 
 form input::placeholder{
@@ -146,6 +147,7 @@ margin: 0px 0px;
 .form-container {
   color: #fff; /* Text color for better visibility */
   width: 50%;
+  padding-top: 2rem;
 }
 
 .hide-on-desktop{
@@ -168,6 +170,7 @@ margin: 0px 0px;
     background-image: url(btc-image.svg);
     background-blend-mode: multiply;
     object-fit: cover;
+    
   }
 
   label{

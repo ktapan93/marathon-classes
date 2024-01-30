@@ -273,7 +273,7 @@ function submitForm() {
   var formDataString = keyValuePairs.join("&");
 
   // Send a POST request to your Google Apps Script
-  fetch("https://script.google.com/macros/s/AKfycbw0Ic1Z6mmW2VRk-TbkkV30yw5EiSzzK22Vg79qujmAj5Dub4bsnRbRDVRhB3YZmrCm0A/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbwN-WJDVcPI1-rmswMr0GG8OXurJbpXQIXthar7K365-trTdO3GY4har-yRnxDZUfuc7Q/exec", {
     redirect: "follow",
     method: "POST",
     body: formDataString,
