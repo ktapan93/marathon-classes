@@ -172,7 +172,6 @@ function populateCities() {
   const defaultCityOption = document.createElement("option");
   defaultCityOption.text = "Select your city";
   defaultCityOption.disabled = true;
-  defaultCityOption.selected = true;
   citySelect.add(defaultCityOption);
 
   // Populate cities based on the selected state
@@ -184,6 +183,7 @@ function populateCities() {
       citySelect.add(option);
     });
   }
+  populateAddresses();
 }
 
 // Function to populate centers based on selected city
@@ -199,7 +199,6 @@ function populateAddresses() {
   const defaultCentreOption = document.createElement("option");
   defaultCentreOption.text = "Select your centre";
   defaultCentreOption.disabled = true;
-  defaultCentreOption.selected = true;
   centreSelect.add(defaultCentreOption);
 
   // Populate centers based on the selected city
@@ -243,6 +242,7 @@ document.getElementById("signupForm").addEventListener("submit", function (event
 // Call populateStates function on page load
 window.onload = function () {
   populateStates();
+  setupUTMInput();
 };
 
 
@@ -251,7 +251,37 @@ window.onload = function () {
 
 
 
+function setupUTMInput(){
+  // Get the current URL
+const urlParams = new URLSearchParams(window.location.search);
 
+// Get specific UTM parameters
+const utmSource = urlParams.get('utm_source');
+const utmMedium = urlParams.get('utm_medium');
+const utmCampaign = urlParams.get('utm_campaign');
+
+// Construct a string containing the UTM parameters
+
+const utmInput1 = document.createElement("input");
+utmInput1.type = "hidden";
+utmInput1.name = "utm_source";
+utmInput1.value = utmSource;
+signupForm.appendChild(utmInput1);
+
+const utmInput2 = document.createElement("input");
+utmInput2.type = "hidden";
+utmInput2.name = "utm_medium";
+utmInput2.value = utmMedium;
+signupForm.appendChild(utmInput2);
+
+const utmInput3 = document.createElement("input");
+utmInput3.type = "hidden";
+utmInput3.name = "utm_campaign";
+utmInput3.value = utmCampaign;
+signupForm.appendChild(utmInput3);
+
+
+}
 
 
 // Function to handle form submission
@@ -284,25 +314,31 @@ function submitForm() {
     .then(function (response) {
       // Check if the request was successful
       if (!response.ok) {
+        window.alert("There is some error, please try again after sometime");
         throw new Error("Failed to submit the form.");
       }
       return response.json(); // Assuming your script returns JSON response
     })
     .then(function (data) {
-      // Handle successful form submission
-      console.log("Data submitted successfully!");
+      openPopup();
       document.getElementById("signupForm").reset(); // Reset the form if needed
-      alert("Form submitted successfully!"); // Display a success notification
+      document.getElementById("submit").disabled = false;
+      document.getElementById("submit").innerText = "Submit";
     })
     .catch(function (error) {
-      // Handle errors, display an error message
-      alert("Form submitted"); // Display an error notification
+      alert("There is some error in submitting now, please try again after sometime.")
     })
     .finally(function () {
-      // Enable the submit button after 10 seconds
-      setTimeout(function () {
-        document.getElementById("submit").disabled = false;
-        document.getElementById("submit").innerText = "Submit";
-      }, 5000);
+     
     });
+}
+
+function openPopup(){
+  const popup = document.getElementById("popup");
+  popup.classList.remove("hide");
+}
+
+function closePopup(){
+  const popup = document.getElementById("popup");
+  popup.classList.add("hide");
 }
