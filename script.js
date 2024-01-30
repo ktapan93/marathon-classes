@@ -157,7 +157,14 @@ const centresByCity = {
   "Visakhapatnam": ["Visakhapatnam-Chinamushidiwada", "Visakhapatnam-Madhurawada"]
 };
 
-
+const timeSlots = {
+  "4": "Slot is this",
+  "5": "This is a different slot",
+  "6": "Slot for class 6",
+  "7" : "Slot for class 7",
+  "8": "Slot for class 8",
+  "9" : "Slot for class 9"
+}
 
 // Function to populate cities based on selected state
 function populateCities() {
@@ -233,6 +240,12 @@ function populateStates() {
   });
 }
 
+function populateSlots(){
+  const selectedGrade = document.getElementById("grade").value;
+  const slotHtml = document.getElementById("slot");
+  slotHtml.value = timeSlots[selectedGrade];
+}
+
 // Attach event listener for form submission
 document.getElementById("signupForm").addEventListener("submit", function (event) {
   event.preventDefault(); // Prevent default form submission
@@ -288,7 +301,7 @@ signupForm.appendChild(utmInput3);
 function submitForm() {
   // Disable the submit button to prevent multiple submissions
   document.getElementById("submit").disabled = true;
-
+  document.getElementById("slot").disabled = false;
   // Display a loading text on the button
   document.getElementById("submit").innerText = "Submitting...";
 
@@ -301,6 +314,7 @@ function submitForm() {
   }
 
   var formDataString = keyValuePairs.join("&");
+  document.getElementById("slot").disabled = true;
 
   // Send a POST request to your Google Apps Script
   fetch("https://script.google.com/macros/s/AKfycbwN-WJDVcPI1-rmswMr0GG8OXurJbpXQIXthar7K365-trTdO3GY4har-yRnxDZUfuc7Q/exec", {
@@ -321,6 +335,7 @@ function submitForm() {
     })
     .then(function (data) {
       openPopup();
+      document.getElementById("slot").disabled = true;
       document.getElementById("signupForm").reset(); // Reset the form if needed
       document.getElementById("submit").disabled = false;
       document.getElementById("submit").innerText = "Submit";

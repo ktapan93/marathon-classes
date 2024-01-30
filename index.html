@@ -40,13 +40,15 @@
           <label for="email">Email:</label>
           <input type="email" id="email" name="email" placeholder="Your email" autocomplete="email" required>
           <label for="grade">Grade:</label>
-          <select id="grade" name="grade" placeholder="Your grade" required>
+          <select id="grade" name="grade" placeholder="Your grade" required onchange="populateSlots()">
             <option value = "" selected disabled>Select Your Grade</option>
             <option value = "6">Grade 6</option>
             <option value = "7">Grade 7</option>
             <option value = "8">Grade 8</option>
             <option value = "9">Grade 9</option>
           </select>
+          <label for="slot">Subject & Time:</label>
+          <input type="text" id="slot" name="slot" placeholder="" disabled>
           <label for="state">State:</label>
           <select id="state" name="state" placeholder="Your state" onchange="populateCities()" required></select>
           <label for="city">City:</label>
