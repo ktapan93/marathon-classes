@@ -358,7 +358,6 @@ const centresByCity = {
   "Sahibzada Ajit Singh Nagar": ["Punjab-Zirakpur"],
   Aligarh: ["Aligarh-Ramghat Road"],
   Amritsar: ["Amritsar-Ranjit Avenue"],
-  Panipat: ["Panipat-Gohana Chowk"],
   Malappuram: ["Malappuram-Perinthalmanna"],
   Durg: ["Bhilai-Risali"],
   Gaya: ["Gaya-AP Colony"],
