@@ -212,7 +212,7 @@ const centresByCity = {
   Rajkot: ["Jamnagar-Aerodrome road"],
   Nellore: ["Nellore-Annamayya"],
   Bhopal: ["Bhopal-Arera Colony", "Bhopal-Lal Ghati", "Bhopal-Jahangirabad"],
-  Dhanbad: ["Dhanbad - Steel Gate", "Dhanbad-Bank More"],
+  Dhanbad: ["Dhanbad-Bank More"],
   Hassan: ["Hassan-Krishnaraja Pura"],
   Mumbai: [
     "Mumbai-Goregaon",
