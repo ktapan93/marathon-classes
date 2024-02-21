@@ -380,10 +380,10 @@ const centresByCity = {
 };
 
 const timeSlots = {
-  6: "Science Class (10 AM - 12 PM)",
-  7: "Maths Class (10 AM - 12 PM)",
-  8: "Science Class (10 AM - 12 PM)",
-  9: "Maths Class (10 AM - 12 PM)",
+  6: "Maths Class (10 AM - 12 PM)",
+  7: "Science Class (10 AM - 12 PM)",
+  8: "Maths Class (10 AM - 12 PM)",
+  9: "Science Class (10 AM - 12 PM)",
 };
 
 const locationMapping = {
@@ -807,6 +807,7 @@ function submitForm(event) {
   // Collect the form data
   const formData = new FormData(event.currentTarget);
   formData.append("sheet", event.currentTarget.dataset.sheet);
+  formData.append("template", event.currentTarget.dataset.template);
   const body = JSON.stringify(Object.fromEntries(formData));
   document.getElementById("slot").disabled = true;
 
