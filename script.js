@@ -380,10 +380,10 @@ const centresByCity = {
 };
 
 const timeSlots = {
-  6: "Maths Class (10 AM - 12 PM)",
-  7: "Science Class (10 AM - 12 PM)",
-  8: "Maths Class (10 AM - 12 PM)",
-  9: "Science Class (10 AM - 12 PM)",
+  6: "Science Class (10 AM - 12 PM)",
+  7: "Maths Class (10 AM - 12 PM)",
+  8: "Science Class (10 AM - 12 PM)",
+  9: "Maths Class (10 AM - 12 PM)",
 };
 
 const locationMapping = {
