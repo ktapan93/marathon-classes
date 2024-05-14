@@ -682,7 +682,7 @@ function populateCities() {
       citySelect.add(option);
     });
   }
-  populateAddresses();
+  // populateAddresses();
 }
 
 // Function to populate centers based on selected city
@@ -732,11 +732,11 @@ function populateStates() {
   });
 }
 
-function populateSlots() {
-  const selectedGrade = document.getElementById("grade").value;
-  const slotHtml = document.getElementById("slot");
-  slotHtml.value = timeSlots[selectedGrade];
-}
+// function populateSlots() {
+//   const selectedGrade = document.getElementById("grade").value;
+//   const slotHtml = document.getElementById("slot");
+//   slotHtml.value = timeSlots[selectedGrade];
+// }
 
 // Attach event listener for form submission
 document.getElementById("signupForm").addEventListener("submit", submitForm);
@@ -800,7 +800,7 @@ function submitForm(event) {
   updateLocation();
   // Disable the submit button to prevent multiple submissions
   document.getElementById("submit").disabled = true;
-  document.getElementById("slot").disabled = false;
+  // document.getElementById("slot").disabled = false;
   // Display a loading text on the button
   document.getElementById("submit").innerText = "Submitting...";
 
@@ -809,7 +809,7 @@ function submitForm(event) {
   formData.append("sheet", event.currentTarget.dataset.sheet);
   formData.append("template", event.currentTarget.dataset.template);
   const body = JSON.stringify(Object.fromEntries(formData));
-  document.getElementById("slot").disabled = true;
+  // document.getElementById("slot").disabled = true;
 
   // Send a POST request to your Google Apps Script
   // fetch("https://script.google.com/macros/s/AKfycbwN-WJDVcPI1-rmswMr0GG8OXurJbpXQIXthar7K365-trTdO3GY4har-yRnxDZUfuc7Q/exec", { // Original
@@ -833,7 +833,7 @@ function submitForm(event) {
         throw new Error(data.error);
       }
       openPopup();
-      document.getElementById("slot").disabled = true;
+      // document.getElementById("slot").disabled = true;
       document.getElementById("signupForm").reset(); // Reset the form if needed
       document.getElementById("submit").disabled = false;
       document.getElementById("submit").innerText = "Submit";
