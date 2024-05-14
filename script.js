@@ -814,7 +814,7 @@ function submitForm(event) {
   // Send a POST request to your Google Apps Script
   // fetch("https://script.google.com/macros/s/AKfycbwN-WJDVcPI1-rmswMr0GG8OXurJbpXQIXthar7K365-trTdO3GY4har-yRnxDZUfuc7Q/exec", { // Original
   fetch(
-    "https://script.google.com/macros/s/AKfycbzVKGnLy-Z5MNIA-zuxdkf4PNNM5OE7hYsxnptrQj08pzheoNUQb80me8ydQcd8iT4S/exec",
+    "https://script.google.com/macros/s/AKfycbwMirZEgGiDpByaf1j9zmaLagBWbKNSfFEtkhNCHwlilqAhTmQ0EymBuZL3UfJ7pq2D/exec",
     {
       // @byjus account
       method: "POST",
