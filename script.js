@@ -797,7 +797,7 @@ function setupUTMInput() {
 function submitForm(event) {
   event.preventDefault(); // Prevent default form submission
 
-  updateLocation();
+  // updateLocation();
   // Disable the submit button to prevent multiple submissions
   document.getElementById("submit").disabled = true;
   // document.getElementById("slot").disabled = false;
